@@ -7,11 +7,11 @@ path: gifliberry
 <h1>Index of /{{ page.path }}</h1>
 <hr>
 <pre>
-{% for image in site.static_files %}
-{% if image.extname contains '.gif' or image.extname contains '.png' or image.extname contains '.jpg' or image.extname contains '.jpeg' %}
+{% for image in site.static_files -%}
+{% if image.extname contains '.gif' or image.extname contains '.png' or image.extname contains '.jpg' or image.extname contains '.jpeg' -%}
   <a href="{{ image.path }}">{{ image.path }}</a>&#09;&#09;{{ image.modified_time }}
-{% endif %}
-{% endfor %}
+{% endif -%}
+{% endfor -%}
 </pre>
 <p>
 Powered by gifliberry
