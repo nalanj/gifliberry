@@ -1,0 +1,12 @@
+<html>
+<head><title>Index of /</title></head>
+<body bgcolor="white">
+<h1>Index of /gifliberry</h1>
+<hr>
+<pre>
+<% Dir.glob("*.{gif,jpg,png}").each do |file| %>
+<a href="<%= file %>"><%= file %></a>
+<% end %>
+</pre>
+</body>
+</html>
