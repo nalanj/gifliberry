@@ -6,15 +6,23 @@ path: gifliberry
 <body bgcolor="white">
 <h1>Index of /{{ page.path }}</h1>
 <hr>
-<pre>
-{% for image in site.static_files -%}
-{% if image.extname contains '.gif' or image.extname contains '.png' or image.extname contains '.jpg' or image.extname contains '.jpeg' -%}
-  <a href="{{ image.path }}">{{ image.path }}</a>&#09;&#09;{{ image.modified_time }}
-{% endif -%}
-{% endfor -%}
-</pre>
-<p>
-Powered by gifliberry
-</p>
+
+<table>
+  <tbody>
+    <th>Name</th>
+    <th>Last Modified</th>
+  </tbody>
+  {% for image in site.static_files %}
+    {% if image.extname contains '.gif' or image.extname contains '.png' or image.extname contains '.jpg' or image.extname contains '.jpeg' %}
+      <tr>
+        <td><a href="{{ image.path }}">{{ image.path }}</a></td>
+        <td>{{ image.modified_time }}</td>
+      </tr>
+    {% endif %}
+  {% endfor %}
+</table>
+
+<p><small>Powered by <a href="https://github.com/commondream/gifliberry-starter-pack">gifliberry</a></small></p>
+
 </body>
 </html>
